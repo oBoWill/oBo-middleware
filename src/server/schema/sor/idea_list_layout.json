@@ -1,0 +1,31 @@
+{
+  "constants": {"newText": "New ${plural}", "save": "Save", "delete": "Delete",
+    "actions": {
+      "Delete": {
+        "name": "Delete",
+        "header": "Are you sure you want to delete",
+        "subHeader": "You can not undo this action."
+      }
+    }
+  },
+  "bindings": {
+    "columns": [
+      {
+        "field": "name",
+        "wrapText": true,
+        "displayOnly": true,
+        "minWidth": 300
+      },
+      {
+        "field": "status",
+        "wrapText": true,
+        "displayOnly": true,
+        "minWidth": 200
+      },
+      "modifiedDate"
+    ],
+    "exportBindings": ["name", "status", "source"]
+  },
+  "defaultSorting": [{"id": "modifiedDate", "desc": true}],
+  "actions": { "add": { "disabled": { "dataLocation": "active", "validations": ["name", "description"] } } }
+}

@@ -1,0 +1,62 @@
+{
+  "id": "/schema/baseRecord",
+  "title": "baseRecord",
+  "type": "object",
+  "label": "Record",
+  "properties": {
+    "name": {
+      "type": "string",
+      "label": "Name",
+      "minLength": 1,
+      "maxLength": 250,
+      "errorMessage": { 
+        "maxLength": "Name exceeds maximum length",
+        "minLength": "Name is required"
+      }
+    },
+    "description": {
+      "type": ["string", "null"],
+      "label": "Description",
+      "maxLength": 1000,
+      "errorMessage": { "maxLength": "Description exceeds maximum length" }
+    },
+    "modifiedDate": {
+      "type": "number",
+      "format": "dateTime",
+      "label": "Modified date"
+    },
+    "createdDate": {
+      "type": "number",
+      "format": "dateTime",
+      "label": "Created date"
+    },
+    "value": {
+      "type": "integer",
+      "label": "Value"
+    },
+    "score": {
+      "type": "integer",
+      "label": "Score"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "$ref": "/definitions.json#/tagType"
+      },
+      "label": "Tags"
+    },
+    "links": {
+      "type": ["array", "null"],
+      "items": {
+        "$ref": "/definitions.json#/linkType"
+      },
+      "label": "Links"
+    }
+  },
+  "required": ["name"],
+  "errorMessage": {
+    "properties": {
+      "name": "Name is required"
+    }
+  }
+}

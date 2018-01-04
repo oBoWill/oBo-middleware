@@ -1,0 +1,30 @@
+{
+  "constants": {
+    "main": { "save": "Save", "cancel": "Cancel", "ok": "Okay" }
+  },
+  "bindings": {
+    "columns": ["firstName", "lastName", "gender", "language", "ethnicity", "income"],
+    "external": {
+      "B2B": {
+        "columns": ["age", "gender", "maritalStatus", "educationLevel", "region", "householdIncome", "occupationStatus", "childrenAge", "residence"]
+      },
+      "B2C": {
+        "columns": ["industry", "companySize", "jobTitle", "seniority", "jobFunction"]
+      }
+    }
+  },
+  "actions": {
+    "surveyCard": {
+      "copy": {
+        "enabled": []
+      },
+      "delete": {
+        "enabled": [{ "$when": { "startDate": { "presence": true } }, "$then": { "endDate": { "presence": true } } }]
+      }
+    },
+    "templateList": {
+      "create": {}
+    }
+  },
+  "defaultSorting": [{"id": "modifiedDate", "desc": false}]
+}

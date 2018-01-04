@@ -1,0 +1,74 @@
+{
+  "id": "/schema/panel",
+  "title": "panel",
+  "type": "object",
+  "label": {
+    "singular": "Panel",
+    "plural": "Panels"},
+  "properties": {
+    "name": {
+      "type": "string",
+      "label": "Title",
+      "minLength": 1,
+      "maxLength": 250,
+      "errorMessage": {
+        "maxLength": "Title exceeds maximum length",
+        "minLength": "Title is required"
+      }
+    },
+    "type" : {
+      "type": "object",
+      "label": "Panel Type",
+      "$ref": "/definitions.json#/enumType",
+      "endpoint": "/enums/panelType"
+    },
+    "audienceType": {
+      "type": "object",
+      "label": "Target Audience",
+      "$ref": "/definitions.json#/enumType",
+      "endpoint": "/enums/audienceType",
+      "errorMessage": "Target Audience is required"
+    },
+    "description": {
+      "type": ["string", "null"],
+      "label": "Description",
+      "maxLength": 1000,
+      "errorMessage": { "maxLength": "Description exceeds maximum length" }
+    },
+    "createdDate": {
+      "type": "number",
+      "format": "date",
+      "label": "Created date"
+    },
+    "modifiedDate": {
+      "type": "number",
+      "format": "date",
+      "label": "Last Modified"
+    },
+    "status": {
+      "type": "object",
+      "$ref": "/definitions.json#/enumType",
+      "label": "Status",
+      "endpoint": "/enums/panelStatus"
+    },
+    "numberTargetResponses": {
+      "type": "number",
+      "label": "Size"
+    },
+    "size": {
+      "type": "number",
+      "label": "Size"
+    },
+    "panelSize": {
+      "type": "number",
+      "label": "Size"
+    }
+  },
+  "required": ["name", "audienceType"],
+  "errorMessage": {
+    "properties": {
+      "name": "Title is required",
+      "audienceType": "Target Audience is required"
+    }
+  }
+}

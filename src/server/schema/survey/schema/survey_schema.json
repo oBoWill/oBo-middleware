@@ -1,0 +1,170 @@
+{
+  "id": "/schema/survey",
+  "title": "survey",
+  "type": "object",
+  "label": {
+    "singular": "Survey",
+    "plural": "Surveys"},
+  "properties": {
+    "name": {
+      "type": "string",
+      "label": "Title",
+      "minLength": 1,
+      "maxLength": 250,
+      "errorMessage": {
+        "maxLength": "Title exceeds maximum length",
+        "minLength": "Title is required"
+      }
+    },
+    "panelType" : {
+      "label": "Panel Type",
+      "$ref": "/definitions.json#/enumType",
+      "endpoint": "/enums/panelType"
+    },
+    "audienceType": {
+      "label": "Target Audience",
+      "$ref": "/definitions.json#/enumType",
+      "endpoint": "/enums/audienceType"
+    },
+    "description": {
+      "type": ["string", "null"],
+      "label": "Description",
+      "maxLength": 1000,
+      "errorMessage": {
+        "maxLength": "Description exceeds maximum length"
+      }
+    },
+    "startDate": {
+      "type": "number",
+      "format": "date",
+      "label": "Start date"
+    },
+    "endDate": {
+      "type": "number",
+      "format": "date",
+      "label": "End date"
+    },
+    "status": {
+      "type": "object",
+      "$ref": "/definitions.json#/enumType",
+      "label": "Status",
+      "endpoint": "/enums/projectStatus"
+    },
+    "relatedSurveys": {
+      "type": "array",
+      "endpoint": "/surveys",
+      "items": {
+        "$ref": "/definitions.json#/relationType"
+      },
+      "label": ""
+    },
+    "products": {
+      "type": "array",
+      "items": {
+        "$ref": "/definitions.json#/domainType"
+      },
+      "label": "Product",
+      "endpoint": "/products"
+    },
+    "template": {
+      "$ref": "/definitions.json#/domainType",
+      "label": "Template",
+      "endpoint": "/surveyTemplates"
+    },
+    "features": {
+      "type": "array",
+      "endpoint": "/features",
+      "items": {
+        "$ref": "/definitions.json#/domainType"
+      },
+      "label": "Features"
+    },
+    "ideas": {
+      "type": "array",
+      "endpoint": "/ideas",
+      "items": {
+        "$ref": "/definitions.json#/domainType"
+      },
+      "label": "Ideas"
+    },
+    "attachments": {
+      "type": "array",
+      "items": {
+        "$ref": "/definitions.json#/domainType"
+      },
+      "label": "Attachments"
+    },
+    "comments": {
+      "type": "array",
+      "items": {
+        "$ref": "/definitions.json#/commentType"
+      },
+      "label": "Comments"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "$ref": "/definitions.json#/tagType"
+      },
+      "label": "Tags"
+    },
+    "links": {
+      "type": "array",
+      "items": {
+        "$ref": "/definitions.json#/linkType"
+      },
+      "label": "Links"
+    },
+    "numberTargetResponses": {
+      "type": "number",
+      "label": "Target Responses"
+    },
+    "numberQualifiedResponses": {
+      "type": "number",
+      "label": "Completed Responses"
+    },
+    "percentToTarget": {
+      "type": "number",
+      "label": "% to Target"
+    },
+    "targetedRespondents": {
+      "type": "number",
+      "label": "Panel size"
+    },
+    "numberQuestions": {
+      "type": "number",
+      "label": "Number of Questions"
+    },
+    "marginError": {
+      "type": "number",
+      "label": "Margin Of Error"
+    },
+    "estimatedTimeMinute": {
+      "type": "number",
+      "label": "Estimated Time"
+    },
+    "estimatedTotalPrice": {
+      "type": "number",
+      "label": "Estimated Total Price"
+    },
+    "priceUnit": {
+      "type": "string",
+      "label": "Price Unit"
+    },
+    "unitPrice": {
+      "type": "number",
+      "format": "currency",
+      "label": "Unit Price"
+    },
+    "hostingUrlParams": {
+      "type": "string",
+      "label": ""
+    }
+  },
+  "required": ["name"],
+  "errorMessage": {
+    "properties": {
+      "name": "Title is required"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "/schema/surveyTemplate",
+  "title": "surveyTemplate",
+  "type": "object",
+  "label": {
+    "singular": "Template",
+    "plural": "Templates"
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "label": "Id"
+    },
+    "name": {
+      "type": "string",
+      "label": "Title",
+      "maxLength": 250,
+      "minLength": 1,
+      "errorMessage": { "maxLength": "Name exceeds maximum length" }
+    },
+    "description": {
+      "type": "string",
+      "label": "description",
+      "minLength": 1,
+      "maxLength": 1000,
+      "errorMessage": { "maxLength": "Description exceeds maximum length" }
+    }
+  }
+}

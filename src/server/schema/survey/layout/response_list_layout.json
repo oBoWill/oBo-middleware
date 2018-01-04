@@ -1,0 +1,83 @@
+{
+  "constants": {
+    "main": { "save": "Save", "cancel": "Cancel", "ok": "Okay" },
+    "templateList": {
+      "title": "Create a new ${survey}",
+      "callToAction": "Select a template."
+    },
+    "zeroState": {
+      "heading": "Ongoing ${surveys}",
+      "callToAction": "You haven\u0027t created any ${surveys} yet.",
+      "buttonText": "Get started"
+    },
+    "ongoingSurveys": {
+      "title": "Ongoing ${surveys}"
+    },
+    "pastSurveys": {
+      "title": "Recently completed ${surveys}",
+      "showTableText": "See all",
+      "showListText": "See recent"
+    },
+    "surveyCard": {
+      "notStartedText": " not started",
+      "noEndText": "Open: ",
+      "completeText": "Complete",
+      "notStartedMessage": "You have ${numberQuestions} questions in this survey"
+    }
+  },
+  "bindings": {
+    "columns": [
+      { "field": "id", "displayOnly": true, "maxWidth": 120, "minWidth": 80 },
+      { "field": "status", "displayOnly": true, "maxWidth": 180, "minWidth": 120 },
+      "quarantineReason",
+      "ipAddress",
+      "numberAnswers",
+      "startDate",
+      "endDate",
+      "avgTimePerQuestionInSeconds"
+    ],
+    "external": {
+      "B2B": {
+        "columns": [
+          { "field": "id", "displayOnly": true, "maxWidth": 120, "minWidth": 80 },
+          { "field": "status", "displayOnly": true, "maxWidth": 180, "minWidth": 120 },
+          "transactionId", "quarantineReason",
+          "numberAnswers", "startDate", "endDate",
+          "avgTimePerQuestionInSeconds",
+          { "field": "companyRevenue", "displayOnly": true, "minWidth": 135 },
+          "companySizeBracket",
+          "industry",
+          "seniorityLevel",
+          "jobFunction"
+        ]
+      },
+      "B2C": {
+        "columns": [
+          { "field": "id", "displayOnly": true, "maxWidth": 120, "minWidth": 80 },
+          { "field": "status", "displayOnly": true, "maxWidth": 180, "minWidth": 120 },
+          "transactionId", "quarantineReason", "numberAnswers",
+          "startDate", "endDate",
+          "avgTimePerQuestionInSeconds",
+          {"field": "age", "displayOnly": true, "maxWidth": 80, "minWidth": 55 },
+          {"field": "gender", "displayOnly": true, "maxWidth": 120, "minWidth": 75 },
+          "educationLevel"
+        ]
+      }
+    },
+    "exportBindings": ["status", "firstName", "lastName", "age", "company"]
+  },
+  "actions": {
+    "surveyCard": {
+      "copy": {
+        "enabled": []
+      },
+      "delete": {
+        "enabled": [{ "$when": { "startDate": { "presence": true } }, "$then": { "endDate": { "presence": true } } }]
+      }
+    },
+    "templateList": {
+      "create": {}
+    }
+  },
+  "defaultSorting": [{"id": "lastName", "desc": false}]
+}

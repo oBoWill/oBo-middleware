@@ -1,0 +1,63 @@
+{
+  "id": "/schema/session",
+  "title": "session",
+  "type": "object",
+  "label": {
+    "singular": "User",
+    "plural": "Users"},
+  "properties": {
+    "avatar": {
+      "type": "image",
+      "label": "Profile picture"
+    },
+    "email": {
+      "type": "string",
+      "label": "Email"
+    },
+    "fname": {
+      "type": "string",
+      "label": "First Name",
+      "minLength": 1,
+      "maxLength": 250,
+      "errorMessage": { "maxLength": "First Name exceeds maximum length" }
+    },
+    "lname": {
+      "type": "string",
+      "label": "Last Name",
+      "minLength": 1,
+      "maxLength": 250,
+      "errorMessage": { "maxLength": "Last Name exceeds maximum length" }
+    },
+    "password": {
+      "type": "string",
+      "label": "Password",
+      "format": "password"
+    },
+    "companyName": {
+      "type": "string",
+      "label": "Company Name"
+    },
+    "responsibility": {
+      "type": "object",
+      "$ref": "/definitions.json#/enumType",
+      "label": "Responsibility",
+      "endpoint": "/enums/responsibility"
+    },
+    "defaultLocale": {
+      "type": "object",
+      "$ref": "/definitions.json#/enumType",
+      "label": "Locale",
+      "endpoint": "/enums/supportedLocale"
+    },
+    "defaultTimezone": {
+      "type": "object",
+      "$ref": "/definitions.json#/enumType",
+      "label": "Timezone",
+      "endpoint": "/enums/supportedTimezone"
+    },
+    "tenant": {
+      "type": "string",
+      "label": "tenant"
+    }
+  }
+}

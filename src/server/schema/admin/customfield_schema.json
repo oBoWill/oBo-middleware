@@ -1,0 +1,51 @@
+{
+  "id": "/schema/customfield",
+  "title": "custom field",
+  "type": "object",
+  "label": {
+    "singular": "Custom Field",
+    "plural": "Custom Fields"
+  },
+  "properties": {
+    "objectAllowCustom": {
+      "type": "object",
+      "label": "Product",
+      "$ref": "/definitions.json#/enumType",
+      "endpoint": "/enums/objectAllowCustom"
+    },
+    "type" : {
+      "type": "object",
+      "label": "Field Type",
+      "$ref": "/definitions.json#/enumType",
+      "endpoint": "/enums/customFieldType",
+      "errorMessage": "Field Type is required"
+    },
+    "name": {
+      "type": "string",
+      "label": "Name",
+      "maxLength": 250,
+      "minLength": 1,
+      "errorMessage": {
+        "maxLength": "Name exceeds maximum length",
+        "minLength": "Name is required"
+      }
+    },
+    "description": {
+      "type": "string",
+      "label": "Description",
+      "maxLength": 1000,
+      "errorMessage": {
+        "maxLength": "Description exceeds maximum length"
+      }
+    },
+    "choices": {
+      "type": "string",
+      "label": "Choices (Separate each choice by pressing \"Return\" on your keyboard)"
+    },
+    "addToLayout": {
+      "label": "Added to Layout",
+      "type": "boolean"
+    }
+  },
+  "required": ["objectAllowCustom", "type", "name"]
+}

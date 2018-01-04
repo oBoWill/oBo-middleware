@@ -1,0 +1,20 @@
+{
+  "constants": {
+    "actions": {
+      "Delete": {
+        "name": "Delete",
+        "header": "Are you sure you want to delete",
+        "subHeader": "You can not undo this action."
+      }
+    }
+  },
+  "bindings": {
+    "columns": [
+      {"field": "objectAllowCustom", "displayOnly": true, "minWidth": 150, "maxWidth": 150 },
+      {"field": "type", "displayOnly": true, "maxWidth": 220, "minWidth": 200 },
+      {"field": "name", "displayOnly": true, "minWidth": 170, "action": "edit" },
+      {"field": "addToLayout", "displayOnly": true, "minWidth": 165, "maxWidth": 170, "header": "Added to layout" }
+    ]
+  },
+  "actions": { "add": { "disabled": { "dataLocation": "wizardData", "validations": ["name"] } } }
+}

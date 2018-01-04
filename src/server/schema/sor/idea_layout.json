@@ -1,0 +1,92 @@
+{
+  "constants": {
+    "actions": {
+      "Delete": {
+        "name": "Delete",
+        "header": "Are you sure you want to delete",
+        "subHeader": "You can not undo this action."
+      }
+    }
+  },
+  "bindings": {},
+  "sections": [
+    {
+      "columnSize": {
+        "s": {
+          "size": 24
+        }
+      },
+      "bindings": [
+        {
+          "field": "description",
+          "disposition": {
+            "field": "TEXT_A"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Additional Info",
+      "columnSize": {
+        "s": {
+          "size": 24
+        },
+        "m": {
+          "size": 12
+        }
+      },
+      "bindings": [
+        "status",
+        "source"
+      ]
+    },
+    {
+      "columnSize": { "s": { "size": 24 } },
+      "title": "Related Ideas",
+      "bindings": [
+        "relatedIdeas"
+      ]
+    },
+    {
+      "title": "Related Records",
+      "columnSize": {
+        "s": {
+          "size": 24
+        },
+        "m": {
+          "size": 12
+        }
+      },
+      "bindings": [
+        "products",
+        "features",
+        "interviews",
+        "surveys"
+      ]
+    }
+  ],
+
+  "meta": {
+    "bindings": [
+      {
+        "field": "score",
+        "disposition": "scoreInput",
+        "container": { "align": "right" }
+      },
+      {
+        "field": "value",
+        "disposition": "scoreInput",
+        "container": { "align": "right" }
+      },
+      {
+        "field": "tags",
+        "dividerBefore": true
+      },
+      {
+        "field": "links",
+        "dividerBefore": true
+      }
+    ]
+  },
+  "state": {}
+}

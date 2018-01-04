@@ -1,0 +1,49 @@
+{
+	"id": "/schema/theme",
+	"title": "Theme",
+	"type": "object",
+	"label": {
+		"singular": "Theme",
+		"plural": "Themes"
+	},
+	"properties": {
+		"businessId": {
+			"type": "string",
+			"label": "ID"
+		},
+		"name": {
+			"type": "string",
+			"label": "Name",
+			"minLength": 1,
+			"maxLength": 250,
+			"errorMessage": { "maxLength": "Name exceeds maximum length" }
+		},
+		"description": {
+			"type": "string",
+			"label": "Description",
+			"maxLength": 1000,
+			"minLength": 1,
+			"errorMessage": { "maxLength": "Description exceeds maximum length" }
+		},
+		"tags": {
+			"type": "array",
+			"items": {
+				"$ref": "/definitions.json#/tagType"
+			},
+			"label": "Tags"
+		},
+		"links": {
+			"type": "array",
+			"items": {
+				"$ref": "/definitions.json#/linkType"
+			},
+			"label": "Links"
+		}
+	},
+	"required": ["name"],
+	"errorMessage": {
+		"properties": {
+			"name": "Name is required"
+		}
+	}
+}

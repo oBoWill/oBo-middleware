@@ -1,0 +1,12 @@
+{
+  "actions": {
+    "tab": {
+      "enabled": {
+        "objectKey": ["survey", "data"],
+        "validations": [{
+          "numberTargetResponses": {"presence": true, "numericality":{ "greaterThan": 49}}
+        }]
+      }
+    }
+  }
+}

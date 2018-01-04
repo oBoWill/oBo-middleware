@@ -1,0 +1,151 @@
+{
+  "id": "/schema/person",
+  "title": "person",
+  "type": "object",
+  "label": {
+    "singular": "Person",
+    "plural": "People"},
+    "properties": {
+      "id": {"type": "string", "label": "ID"},
+      "status": {
+        "type": "object",
+        "label" : "Status",
+        "$ref" : "/definitions.json#/enumType",
+        "endpoint": "/enums/personStatus"
+      },
+      "name": {
+        "type": "string",
+        "label": "Name"
+      },
+      "firstName": {
+        "type": "string",
+        "label": "First Name"
+      },
+      "lastName": {
+        "type": "string",
+        "label": "Last Name"
+      },
+      "age": {
+        "type": "number",
+        "label": "Age"
+      },
+      "company": {
+        "type": "string",
+        "label": "Company"
+      },
+      "workEmail": {
+        "type": "string",
+        "label": "Work Email"
+      },
+      "personEmail": {
+        "type": "string",
+        "label": "Personal Email"
+      },
+      "workPhone": {
+        "type": "string",
+        "label": "Work Phone"
+      },
+      "personPhone": {
+        "type": "string",
+        "label": "Personal Phone"
+      },
+      "genderString": {
+        "type": "string",
+        "label": "Gender"
+      },
+      "jobTitle": {
+        "type": "string",
+        "label": "Job Title"
+      },
+      "location": {
+        "type": "string",
+        "label": "Location"
+      },
+      "childrenAge": {
+        "label" : "Children Age",
+        "$ref" : "/definitions.json#/enumType",
+        "endpoint": "/enums/childrenAge"
+      },
+      "revenueBracket": {
+        "label" : "Company Revenue",
+        "$ref" : "/definitions.json#/enumType",
+        "endpoint": "/enums/revenueBracket"
+      },
+      "companySizeBracket": {
+        "label" : "Company Size",
+        "$ref" : "/definitions.json#/enumType",
+        "endpoint": "/enums/companySizeBracket"
+      },
+      "residence": {
+        "label" : "Residence",
+        "$ref" : "/definitions.json#/enumType",
+        "endpoint": "/enums/residence"
+      },
+      "householdIncomeBracket": {
+        "label" : "Household Income",
+        "$ref" : "/definitions.json#/enumType",
+        "endpoint": "/enums/householdIncomeBracket"
+      },
+      "region": {
+        "label" : "Region",
+        "$ref" : "/definitions.json#/enumType",
+        "endpoint": "/enums/region"
+      },
+      "dma": {
+        "label" : "DMA",
+        "$ref" : "/definitions.json#/enumType",
+        "endpoint": "/enums/dma"
+      },
+      "occupationStatus": {
+        "label" : "Occupation Status",
+        "$ref" : "/definitions.json#/enumType",
+        "endpoint": "/enums/occupationStatus"
+      },
+      "maritalStatus": {
+        "label" : "Marital Status",
+        "$ref" : "/definitions.json#/enumType",
+        "endpoint": "/enums/maritalStatus"
+      },
+      "educationLevel": {
+        "label" : "Education Level",
+        "$ref" : "/definitions.json#/enumType",
+        "endpoint": "/enums/educationLevel"
+      },
+      "gender": {
+        "label" : "Gender",
+        "$ref" : "/definitions.json#/enumType",
+        "endpoint": "/enums/gender"
+      },
+      "seniorityLevel": {
+        "label" : "Seniority",
+        "$ref" : "/definitions.json#/enumType",
+        "endpoint": "/enums/seniorityLevel"
+      },
+      "personalIncome": {
+        "label" : "Personal Income",
+        "type" : "number"
+      },
+      "householdIncome": {
+        "label" : "Household Income",
+        "type" : "number"
+      },
+      "jobFunction": {
+        "label" : "Job Function",
+        "$ref" : "/definitions.json#/enumType",
+        "endpoint": "/enums/jobFunction"
+      },
+      "industry": {
+        "label" : "Industry",
+        "$ref" : "/definitions.json#/enumType",
+        "endpoint": "/enums/industry"
+      },
+      "companySize": {
+        "label" : "Company Size",
+        "type" : "integer"
+      },
+      "companyRevenue": {
+        "label" : "Company Revenue",
+        "type" : "number"
+      }
+    }
+}

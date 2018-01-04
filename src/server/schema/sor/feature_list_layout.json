@@ -1,0 +1,43 @@
+{
+  "constants": {
+    "actions": {
+      "Delete": {
+        "name": "Delete",
+        "header": "Are you sure you want to delete",
+        "subHeader": "You can not undo this action."
+      }
+    }
+  },
+  "bindings": {
+    "columns": [
+      {
+        "field": "businessId",
+        "displayOnly": true,
+        "maxWidth": 100
+      },
+      {
+        "field": "name",
+        "wrapText": true,
+        "displayOnly": true,
+        "minWidth": 300
+      },
+      {
+        "field": "priority",
+        "displayOnly": true,
+        "maxWidth": 100
+      },
+      {
+        "field": "product",
+        "displayOnly": true,
+        "minWidth": 200
+      },
+      "release",
+      "theme",
+      "modifiedDate"
+    ],
+    "newRecordBindings": ["name", "description", "product"],
+    "exportBindings": ["name", "businessId", "priority", "product"]
+  },
+  "actions": { "add": { "disabled": { "dataLocation": "active", "validations": ["name", "description", "product"] } } },
+  "defaultSorting": [{"id": "modifiedDate", "desc": true}]
+}

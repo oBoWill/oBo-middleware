@@ -1,0 +1,38 @@
+{
+  "sections": [
+    {
+      "title": "About you",
+      "bindings": [
+        {
+          "field": "thumbnail",
+          "disposition": "avatarField",
+          "container": {
+            "s": {
+              "size": 24
+            },
+            "margin": { "bottom": "medium" }
+          }
+        },
+        {"field": "fname"},
+        {"field": "lname"},
+        {"field": "email"},
+        {"field": "password", "disposition": "passwordButton"}
+      ]
+    },
+    {
+      "title": "About your work",
+      "bindings": [
+        {"field": "companyName", "readOnly" : false},
+        {"field": "jobTitle"},
+        {"field": "responsibility"}
+      ]
+    },
+    {
+      "title": "About your location",
+      "bindings": [
+        { "field": "defaultLocale" },
+        { "field": "defaultTimezone" }
+      ]
+    }
+  ]
+}

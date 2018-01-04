@@ -1,0 +1,80 @@
+{
+	"id": "/schema/product",
+	"title": "product",
+	"type": "object",
+	"label": {
+		"singular": "Product",
+		"plural": "Products"
+	},
+	"properties": {
+		"businessId": {
+			"type": "string",
+			"label": "ID"
+		},
+		"name": {
+			"type": "string",
+			"label": "Name",
+			"minLength": 1,
+			"maxLength": 250,
+			"errorMessage": {
+				"maxLength": "Name exceeds maximum length",
+				"minLength": "Name is required"
+			}
+		},
+		"description": {
+			"type": ["string", "null"],
+			"label": "Description",
+			"maxLength": 1000,
+			"errorMessage": { "maxLength": "Description exceeds maximum length" }
+		},
+		"featureCount": {
+			"type": "integer",
+			"label": "# Features"
+		},
+		"ideaCount": {
+			"type": "integer",
+			"label": "# Ideas"
+		},
+		"status": {
+			"type": "object",
+			"$ref": "/definitions.json#/enumType",
+			"label": "Status",
+			"endpoint": "/enums/productStatus"
+		},
+		"productLine": {
+			"type": ["object", "null"],
+			"$ref": "/definitions.json#/domainType",
+			"label": "Product Line",
+			"endpoint": "/productLines"
+		},
+		"attachments": {
+			"type": "array",
+      		"items": {
+        	"$ref": "/definitions.json#/attachmentType"
+      	},
+      	"label": "Attachments"
+		},
+		"comments": {
+			"type": "array",
+			"items": {
+				"$ref": "/definitions.json#/commentType"
+			},
+			"label": "Comments"
+		},
+		"tags": {
+			"type": "array",
+			"items": {
+				"$ref": "/definitions.json#/tagType"
+			},
+			"label": "Tags"
+		},
+		"links": {
+			"type": "array",
+			"items": {
+				"$ref": "/definitions.json#/linkType"
+			},
+			"label": "Links"
+		}
+	},
+	"required": ["name"]
+}

@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "bindings": [
+      { "field": "status", "displayOnly": false },
+      { "field": "quarantineReason", "displayOnly": false },
+      { "field": "endDate", "displayOnly": true },
+      { "field": "ipAddress", "displayOnly": true },
+      { "field": "location", "displayOnly": true },
+      { "field": "avgTimePerQuestionInSeconds", "displayOnly": true },
+      { "field": "totalTime", "displayOnly": true }
+    ]
+  },
+  "demographics": {
+    "bindings": {
+      "columns": [
+        { "field": "location", "displayOnly": true }
+      ],
+      "external": {
+        "B2B": {
+          "columns": [
+            { "field": "industry", "displayOnly": true },
+            { "field": "region", "displayOnly": true },
+            { "field": "companySizeBracket", "displayOnly": true },
+            { "field": "revenueBracket", "displayOnly": true },
+            { "field": "seniorityLevel", "displayOnly": true },
+            { "field": "jobFunction", "displayOnly": true }
+          ]
+        },
+        "B2C": {
+          "columns": [
+            { "field": "age", "displayOnly": true },
+            { "field": "gender", "displayOnly": true },
+            { "field": "maritalStatus", "displayOnly": true },
+            { "field": "educationLevel", "displayOnly": true },
+            { "field": "region", "displayOnly": true },
+            { "field": "dma", "displayOnly": true },
+            { "field": "householdIncomeBracket", "displayOnly": true },
+            { "field": "occupationStatus", "displayOnly": true },
+            { "field": "childrenAge", "displayOnly": true },
+            { "field": "residence", "displayOnly": true }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "$id": "/schema/survey/question",
+  "type": "object",
+  "label": {
+    "singular": "Question",
+    "plural": "Questions"
+  },
+  "properties": {
+    "id": { "type": "string" },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 250,
+      "errorMessage": { "maxLength": "Name exceeds maximum length" }
+    },
+    "field": { "type": "string" },
+    "type": { "type": "string" },
+    "min": { "type": ["number", null] },
+    "max": { "type": ["number", null] },
+    "minLength": { "type": "number" },
+    "maxLength": { "type": "number" },
+    "accessor": { "$ref": "/definitions.json#/accessorType" },
+    "template": {
+      "type": "string",
+      "label": "Question Type"
+    },
+    "label": {
+      "type": ["string", null],
+      "label": "Label",
+      "minLength": 1,
+      "maxLength": 1000
+    },
+    "description": {
+      "type": ["string", null],
+      "label": "Description",
+      "maxLength": 1000,
+      "errorMessage": { "maxLength": "Description exceeds maximum length" }
+    },
+    "multiple": {
+      "type": "boolean",
+      "label": "Multiple"
+    },
+    "pageBreak": {
+      "type": "boolean",
+      "label": "Page Break"
+    },
+    "required": {
+      "type": "boolean",
+      "label": "Required"
+    },
+    "source": {
+      "$ref": "/definitions.json#/sourceType",
+      "label": "Source"
+    },
+    "rows": {
+      "type": "array",
+      "label": "Rows",
+      "items": { "$ref": "/definitions.json#/itemType" }
+    },
+    "cols": {
+      "type": "array",
+      "label": "Columns",
+      "items": { "$ref": "/definitions.json#/itemType" }
+    },
+    "options": {
+      "type": "array",
+      "label": "Options",
+      "items": { "$ref": "/definitions.json#/itemType" }
+    },
+    "value": {
+      "label": "Value",
+      "switch": [
+        {
+          "if": { "type": "object" },
+          "then": { "$ref": "/definitions.json#/valueItemType" }
+        },
+        {
+          "if": { "type": "array" },
+          "then": {
+            "items": {
+              "$ref": "/definitions.json#/valueItemType"
+            },
+            "minItems": { "$data": "1/min" },
+            "maxItems": { "$data": "1/max" }
+          }
+        },
+        {
+          "then": {
+            "format": { "$data": "1/type" },
+            "minLength": { "$data": "1/minLength" },
+            "maxLength": { "$data": "1/maxLength" }
+          }
+        }
+      ]
+    }
+  },
+  "required": ["id", "label", "field", "template"]
+}

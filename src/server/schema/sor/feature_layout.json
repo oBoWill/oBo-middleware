@@ -1,0 +1,104 @@
+{
+  "constants": {
+    "actions": {
+      "Delete": {
+        "name": "Delete",
+        "header": "Are you sure you want to delete",
+        "subHeader": "You can not undo this action."
+      }
+    }
+  },
+  "bindings": {},
+  "sections": [{
+    "columnSize": { "s": { "size": 24 } },
+    "bindings": [
+      {
+        "field": "description",
+        "disposition": {
+          "field": "TEXT_A"
+        }
+      }
+    ]
+  }, {
+    "title": "Additional Info",
+    "columnSize": {
+      "s": {
+        "size": 24
+      },
+      "m": {
+        "size": 12
+      }
+    },
+    "bindings": [
+      "status",
+      "featureType",
+      {
+        "field": "startDate",
+        "disposition": { "field": "DATE" }
+      },
+      {
+        "field": "pmTargetDate",
+        "disposition": { "field": "DATE" },
+        "minimum": {
+          "$data": "startDate"
+        }
+      },
+      {
+        "field": "engExpectedDate",
+        "disposition": { "field": "DATE" },
+        "minimum": {
+          "$data": "startDate"
+        }
+      },
+      {
+        "field": "actualShipDate",
+        "disposition": { "field": "DATE" }
+      },
+      "priority",
+      "product"
+    ]
+  }, {
+    "columnSize": { "s": { "size": 24 } },
+    "title": "Related Features",
+    "bindings": ["relatedFeatures"]
+  }, {
+    "title": "Related Records",
+    "columnSize": {
+      "s": {
+        "size": 24
+      },
+      "m": {
+        "size": 12
+      }
+    },
+    "bindings": ["interviews", "surveys", "ideas"]
+  }
+  ],
+  "meta": {
+    "bindings": [
+      {
+        "field": "score",
+        "disposition": "scoreInput",
+        "container": { "align": "right" }
+      },
+      {
+        "field": "estimation",
+        "disposition": "scoreInput",
+        "container": { "align": "right" }
+      },
+      {
+        "field": "value",
+        "disposition": "scoreInput",
+        "container": { "align": "right" }
+      },
+      {
+        "field": "tags",
+        "dividerBefore": true
+      },
+      {
+        "field": "links",
+        "dividerBefore": true
+      }
+    ]
+  }
+}

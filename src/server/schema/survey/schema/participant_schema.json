@@ -1,0 +1,194 @@
+{
+  "id": "/schema/surveyParticipant_schema",
+  "title": "Survey Participant",
+  "type": "object",
+  "label": "participant Panel Criteria",
+  "properties": {
+    "name": {
+      "type": ["string", "null"],
+      "label": "Name",
+      "minLength": 1,
+      "maxLength": 250,
+      "errorMessage": {
+        "maxLength": "Name exceeds maximum length",
+        "minLength": "Name is required"
+      }
+    },
+    "description": {
+      "type": ["string", "null"],
+      "label": "Description",
+      "maxLength": 1000,
+      "errorMessage": {
+        "maxLength": "Description exceeds maximum length"
+      }
+    },
+    "audienceType": {
+      "type": "object",
+      "label": "Audience",
+      "$ref": "/definitions.json#/enumType",
+      "endpoint": "/enums/audienceType"
+    },
+    "numberTargetResponses": {
+      "type": "number",
+      "label": "# of participants"
+    },
+    "estimatedTimeMinute": {
+      "label": "Estimated time to take survey",
+      "type": "integer"
+    },
+    "industry": {
+      "label": "Industries",
+      "type": "array",
+      "endpoint": "/enums/industry",
+      "items": {
+        "$ref": "/definitions.json#/enumType"
+      }
+    },
+    "relatedTarget": {
+      "label": "",
+      "type": "object",
+      "items": {
+        "$ref": "/definitions.json#/enumType"
+      }
+    },
+    "companySizeBracket": {
+      "label": "Company Size",
+      "type": "array",
+      "endpoint": "/enums/companySizeBracket",
+      "items": {
+        "$ref": "/definitions.json#/enumType"
+      }
+    },
+    "revenueBracket": {
+      "label": "Company Revenue",
+      "type": "array",
+      "endpoint": "/enums/revenueBracket",
+      "items": {
+        "$ref": "/definitions.json#/enumType"
+      }
+    },
+    "jobFunction": {
+      "label": "Function",
+      "type": "array",
+      "endpoint": "/enums/jobFunction",
+      "items": {
+        "$ref": "/definitions.json#/enumType"
+      }
+    },
+    "seniorityLevel": {
+      "label": "Job Level",
+      "type": "array",
+      "endpoint": "/enums/seniorityLevel",
+      "items": {
+        "$ref": "/definitions.json#/enumType"
+      }
+    },
+    "ageBracket": {
+      "label": "Age",
+      "type": "array",
+      "endpoint": "/enums/ageBracket",
+      "items": {
+        "$ref": "/definitions.json#/enumType"
+      }
+    },
+    "gender": {
+      "label": "Gender",
+      "type": "array",
+      "endpoint": "/enums/gender",
+      "items": {
+        "$ref": "/definitions.json#/enumType"
+      }
+    },
+    "maritalStatus": {
+      "label": "Marital",
+      "type": "array",
+      "endpoint": "/enums/maritalStatus",
+      "items": {
+        "$ref": "/definitions.json#/enumType"
+      }
+    },
+    "educationLevel": {
+      "label": "Education",
+      "type": "array",
+      "endpoint": "/enums/educationLevel",
+      "items": {
+        "$ref": "/definitions.json#/enumType"
+      }
+    },
+    "householdIncomeBracket": {
+      "label": "Household Income",
+      "type": "array",
+      "endpoint": "/enums/householdIncomeBracket",
+      "items": {
+        "$ref": "/definitions.json#/enumType"
+      }
+    },
+    "occupationStatus": {
+      "label": "Occupation Status",
+      "type": "array",
+      "endpoint": "/enums/occupationStatus",
+      "items": {
+        "$ref": "/definitions.json#/enumType"
+      }
+    },
+    "childrenAge": {
+      "label": "Children Age",
+      "type": "array",
+      "endpoint": "/enums/childrenAge",
+      "items": {
+        "$ref": "/definitions.json#/enumType"
+      }
+    },
+    "region": {
+      "label": "Region",
+      "type": "array",
+      "endpoint": "/enums/region",
+      "items": {
+        "$ref": "/definitions.json#/enumType"
+      }
+    },
+    "dma": {
+      "label": "DMA",
+      "type": "array",
+      "endpoint": "/enums/dma",
+      "items": {
+        "$ref": "/definitions.json#/enumType"
+      }
+    },
+    "residence": {
+      "label": "Residence",
+      "type": "array",
+      "endpoint": "/enums/residence",
+      "items": {
+        "$ref": "/definitions.json#/enumType"
+      }
+    },
+    "unitPrice": {
+      "label": "Estimated cost per participant",
+      "type": "number",
+      "format": "currency"
+    },
+    "estimatedTotalPrice": {
+      "label": "Total Estimated Cost",
+      "type": "number",
+      "format": "currency"
+    },
+    "marginError": {
+      "label": "Margin of error",
+      "type": "number",
+      "format": "percent"
+    },
+    "copyFrom": {
+      "label": "Copy",
+      "$ref": "/definitions.json#/domainType",
+      "endpoint": "/panels"
+    }
+  },
+  "required": ["name", "audienceType"],
+  "errorMessage": {
+    "properties": {
+      "name": "Name is required",
+      "audienceType": "Audience Type is required"
+    }
+  }
+}

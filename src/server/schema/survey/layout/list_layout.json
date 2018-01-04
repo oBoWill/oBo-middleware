@@ -1,0 +1,93 @@
+{
+  "constants": {
+    "main": { "save": "Save", "cancel": "Cancel", "ok": "Okay", "start": "Start", "delete": "Delete" },
+    "templateList": {
+      "title": "Create a new ${survey}",
+      "callToAction": "Select a template."
+    },
+    "zeroState": {
+      "heading": "Ongoing ${surveys}",
+      "callToAction": "You don\u0027t have any ongoing ${surveys}.",
+      "buttonText": "Get started"
+    },
+    "ongoingSurveys": {
+      "title": "My ongoing ${surveys}"
+    },
+    "pastSurveys": {
+      "title": {
+        "my": "My ${surveys}",
+        "all": "All ${surveys}"
+      },
+      "showTableText": "See all",
+      "showListText": "See recent"
+    },
+    "surveyCard": {
+      "notStartedText": " not started",
+      "noEndText": "Open: ",
+      "completeText": "Complete",
+      "notStartedMessage": "${numberQuestions} questions in this survey"
+    },
+    "confirm": {
+      "delete": {
+        "header": "Are you sure you want to delete \"${survey}\"?",
+        "subHeader": "You can not undo this action."
+      }
+    }
+  },
+  "bindings": {
+    "past": {
+      "surveyTableColumns": [
+        {
+          "field": "name",
+          "displayOnly": true,
+          "minWidth": 200
+        },
+        {
+          "field": "status",
+          "displayOnly": true,
+          "maxWidth": 105,
+          "minWidth": 105
+        },
+        {
+          "field": "startDate",
+          "displayOnly": true,
+          "maxWidth": 120,
+          "minWidth": 120
+        },
+        {
+          "field": "endDate",
+          "displayOnly": true,
+          "maxWidth": 120,
+          "minWidth": 120
+        },
+        {
+          "field": "targetedRespondents",
+          "displayOnly": true,
+          "maxWidth": 110,
+          "minWidth": 110
+        },
+        {
+          "field": "percentToTarget",
+          "displayOnly": true,
+          "maxWidth": 125,
+          "minWidth": 125
+        }
+      ]
+    }
+  },
+  "actions": {
+    "add": { "disabled": { "dataLocation": "newSurvey", "validations": ["name", "description"] } },
+    "surveyCard": {
+      "copy": {
+        "enabled": []
+      },
+      "delete": {
+        "enabled": [{ "$when": { "startDate": { "presence": true } }, "$then": { "endDate": { "presence": true } } }]
+      }
+    },
+    "templateList": {
+      "create": {}
+    }
+  },
+  "defaultSorting": [{"id": "modifiedDate", "desc": true}]
+}

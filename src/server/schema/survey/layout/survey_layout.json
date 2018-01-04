@@ -1,0 +1,80 @@
+{
+  "constants": {
+      "stopButtonText": "Stop",
+      "pauseButtonText": "Pause",
+      "resumeButtonText": "Resume",
+      "analysisButtonText": "Analysis",
+      "responsesButtonText": "Response",
+      "participantsButtonText": "Participants",
+      "noRespondentsText": "Add participants to this survey first.",
+      "noQuestionsText": "Add questions to this survey first.",
+      "responseOverTime": "Response over time",
+      "noResponsesText": "No responses yet",
+      "numberQualifiedResponsesText": "Completed",
+      "percentToTargetText": "Percent to target",
+      "numberTargetResponsesText": "Panel size",
+      "daysOpenText": "Days open",
+      "launchButtonText": "Launch",
+      "notStartedText": "0",
+      "graphWindow": [{
+        "id": 1,
+        "value": 7,
+        "unit": "days",
+        "text": "LAST 7 DAYS"
+      }, {
+        "id": 2,
+        "value": 14,
+        "unit": "days",
+        "text": "LAST 14 DAYS"
+      }, {
+        "id": 3,
+        "value": 30,
+        "unit": "days",
+        "text": "LAST 30 DAYS"
+      }],
+      "actions": {
+        "Delete": {
+          "name": "Delete",
+          "header": "Are you sure you want to delete",
+          "subHeader": "You can not undo this action."
+        }
+      }
+    },
+  "bindings": {
+
+  },
+  "sections": [{
+    "columnSize": { "s": { "size": 24 } },
+    "bindings": [
+      {
+        "field": "description",
+        "disposition": {
+          "field": "TEXT_A"
+        }
+      }
+    ]
+  }, {
+    "title": "Additional Info",
+    "bindings": [{ "field": "template", "displayOnly": true }, { "field": "startDate", "displayOnly": true }]
+  }, {
+    "columnSize": { "s": { "size": 24 } },
+    "title": "Related Surveys",
+    "bindings": ["relatedSurveys"]
+  }, {
+    "title": "Related Records",
+    "bindings": ["products", "features", "interviews", "ideas"]
+  }
+  ],
+  "meta": {
+    "bindings": [
+      {
+        "field": "tags"
+      },
+      {
+        "field": "links",
+        "dividerBefore": true
+      }
+    ]
+  },
+  "defaultSorting": [{"id": "startDate", "desc": false}]
+}

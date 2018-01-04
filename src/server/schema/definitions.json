@@ -1,0 +1,128 @@
+{
+  "domainType": {
+    "type": "object",
+    "properties" : {
+      "id" : { "oneOf": [{ "type": "integer" }, { "type": "string" }], "label": "Id"},
+      "name" : {"type": "string", "label": "Name"},
+      "description": {"type": ["string", "null"], "label": "Description"}
+    },
+    "required": ["id", "name"],
+    "errorMessage": {
+      "properties": {
+        "id": "Id is required",
+        "name": "Name is required"
+      }
+    }
+  },
+  "enumType": {
+    "type": ["object", "null"],
+    "properties" : {
+      "id" : { "type": ["integer", "string", "null"], "label": "Id"},
+      "displayName" : {"type": "string", "label": "Name"},
+      "isDefault" : {"type": "boolean"}
+    }
+  },
+  "commentType": {
+    "type": "object",
+    "properties" : {
+      "commentor" : {"$ref": "#/domainType"},
+      "comment" : {"type": "string", "label": "comment"}
+    }
+  },
+  "attachmentType": {
+    "type": "object",
+    "properties" : {
+      "name" : {"type": "string", "label": "Name"},
+      "description" : {"type": "string", "label": "Description"},
+      "thumbnail" : {"type": "image", "label": "Thumbnail"},
+      "fileName" : {"type": "string", "label": "File Name"}
+    }
+  },
+  "userType": {
+    "type": "object",
+    "properties" : {
+      "fname" : {"type": "string", "label": "First Name"},
+      "lname" : {"type": "string", "label": "Last Name"},
+      "email" : {"type": "string", "label": "Email"},
+      "id" : {"type": "integer", "label": "ID"}
+    }
+  },
+  "tagType": {
+    "type": "string",
+    "maxLength": 40
+  },
+  "linkType": {
+    "type": "string"
+  },
+  "relationType": {
+    "type": "object",
+    "properties": {
+      "relation": { "$ref": "#/enumType", "endpoint": "/enums/relationshipType" },
+      "target": { "$ref": "#/domainType" }
+    }
+  },
+  "answerType": {
+    "type": "object",
+    "properties": {
+      "name": { "type": "string" },
+      "type": { "type": "string" },
+      "description": { "type": "string" },
+      "value": { "type": "object" }
+    }
+  },
+  "itemType": {
+    "type": "object",
+    "properties": {
+      "label": {
+        "type": ["string", null],
+        "minLength": 1,
+        "maxLength": 250,
+        "label": "Label"
+      },
+      "name": {
+        "type": ["string", null],
+        "minLength": 1,
+        "maxLength": 250,
+        "label": "Label"
+      },
+      "value": {
+        "type": ["number", "string"],
+        "maxLength": 20,
+        "label": "Value"
+      }
+    },
+    "required": ["value"],
+    "patternRequired": ["key|value"]
+  },
+  "valueItemType": {
+    "switch": [
+      {
+        "if": {
+          "properties": {
+            "row": { "$ref": "#/itemType" },
+            "col": { "$ref": "#/itemType" }
+          },
+          "required": ["row", "col"]
+        },
+        "then": true
+      },
+      { "then": { "properties": {"col": { "$ref": "#/itemType" } } } }
+    ]
+  },
+  "accessorType": {
+    "type": ["object", null],
+    "properties": {
+      "label": { "type": ["array", "string"] },
+      "value": { "type": ["array", "string"] },
+      "key": { "type": ["array", "string"] },
+      "patternRequired": ["key|value"]
+    }
+  },
+  "sourceType": {
+    "type": "object",
+    "properties": {
+      "label": { "type": "string" },
+      "value": { "type": "string" }
+    }
+  }
+}

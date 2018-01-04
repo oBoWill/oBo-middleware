@@ -1,0 +1,100 @@
+{
+  "id": "/schema/session",
+  "title": "session",
+  "type": "object",
+  "label": {
+    "singular": "Profile",
+    "plural": "Profiles"},
+  "properties": {
+    "thumbnail": {
+      "type": "string",
+      "label": "Profile picture",
+      "format": "image",
+      "container": { "s": 24 }
+    },
+    "email": {
+      "type": "string",
+      "label": "Email",
+      "format": "email",
+      "minLength": 1,
+      "maxLength": 250,
+      "errorMessage": {
+        "maxLength": "Email exceeds maximum length",
+        "minLength": "Email is required"
+      }
+    },
+    "fname": {
+      "type": "string",
+      "label": "First Name",
+      "minLength": 1,
+      "maxLength": 250,
+      "errorMessage": {
+        "maxLength": "First Name exceeds maximum length",
+        "minLength": "First Name is required" }
+    },
+    "lname": {
+      "type": "string",
+      "label": "Last Name",
+      "minLength": 1,
+      "maxLength": 250,
+      "errorMessage": {
+        "maxLength": "Last Name exceeds maximum length",
+        "minLength": "Last Name is required"
+      }
+    },
+    "password": {
+      "type": "string",
+      "label": "Password"
+    },
+    "jobTitle": {
+      "type": "string",
+      "label": "Your title",
+      "minLength": 1,
+      "maxLength": 250,
+      "errorMessage": {
+        "maxLength": "Your title exceeds maximum length",
+        "minLength": "Your title is required"
+      }
+    },
+    "companyName": {
+      "type": "string",
+      "label": "Company Name"
+    },
+    "responsibility": {
+      "type": "object",
+      "$ref": "/definitions.json#/enumType",
+      "label": "Responsibility",
+      "endpoint": "/enums/responsibility"
+    },
+    "roles": {
+      "type": "array",
+      "label": "Role",
+      "endpoint": "/enums/role",
+      "items": {
+        "$ref": "/definitions.json#/enumType"
+      }
+    },
+    "sstatus": {
+      "label": "Status",
+      "type": "string",
+      "enum": ["Active", "Inactive"]
+    },
+    "defaultLocale": {
+      "type": "object",
+      "$ref": "/definitions.json#/enumType",
+      "label": "Locale",
+      "endpoint": "/enums/supportedLocale"
+    },
+    "defaultTimezone": {
+      "type": "object",
+      "$ref": "/definitions.json#/enumType",
+      "label": "Time Zone",
+      "endpoint": "/enums/supportedTimezone"
+    },
+    "tenant": {
+      "type": "string",
+      "label": "tenant"
+    }
+  },
+  "required": ["fname", "lname", "email", "jobTitle"]
+}

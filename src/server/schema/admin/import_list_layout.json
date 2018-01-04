@@ -1,0 +1,25 @@
+{
+  "constants": {
+    "actions": {
+      "Delete": {
+        "name": "Delete",
+        "header": "Are you sure you want to delete",
+        "subHeader": "You can not undo this action."
+      }
+    }
+  },
+  "bindings": {
+    "columns": [
+      {"field": "status", "displayOnly": true, "maxWidth": 120, "minWidth": 100 },
+      {"field": "objectName", "displayOnly": true, "maxWidth": 170, "minWidth": 90 },
+      {"field": "recordImported", "displayOnly": true, "maxWidth": 120, "minWidth": 110 },
+      {"field": "recordRejected", "displayOnly": true, "maxWidth": 120, "minWidth": 110 },
+      {"field": "startDate", "displayOnly": true, "maxWidth": 120, "minWidth": 90 },
+      {"field": "createdBy", "displayOnly": true, "minWidth": 140 },
+      {"field": "errorFile", "disposition": "attachmentLink", "maxWidth": 170, "minWidth": 165 }
+    ],
+    "newRecordFields": ["objectName"],
+    "actions": { "add": { "disabled": { "dataLocation": "active", "validations": ["name"] } } }
+  },
+  "actions": {}
+}

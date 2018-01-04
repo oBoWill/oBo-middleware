@@ -1,0 +1,26 @@
+{
+  "constants":{
+    "externalPanelSummary":{
+      "title":"Participant panel criteria",
+      "editPanel":"Edit panel",
+      "purchaseAndLaunch":"Purchase and launch survey",
+      "replacePanel":"Replace panel",
+      "B2BRecommend":"For a typical B2B survey, we recommend minimum of 200 participants",
+      "B2CRecommend":"For a typical B2C survey, we recommend minimum of 200 participants"
+    }},
+  "bindings":{
+    "B2CexternalPanelTargetingCriteriaIn": ["ageBracket", "gender", "maritalStatus", "educationLevel"],
+    "B2CexternalPanelTargetingCriteriaWith": ["householdIncomeBracket", "occupationStatus", "childrenAge", "residence"],
+    "B2BexternalPanelTargetingCriteriaIn": ["industry", "region"],
+    "B2BexternalPanelTargetingCriteriaWith": ["seniorityLevel", "jobFunction"],
+    "newInternalBindings": [
+      "name",
+      "description",
+      {
+        "field": "audienceType",
+        "disposition": { "field": "BUTTON" }
+      }
+    ]
+  },
+  "defaultSorting": [{"id": "modifiedDate", "desc": false}]
+}

@@ -1,0 +1,122 @@
+{
+  "id": "/schema/idea",
+  "title": "idea",
+  "type": "object",
+  "label": {
+    "singular": "Idea",
+    "plural": "Ideas"
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "label": "Name",
+      "minLength": 1,
+      "maxLength": 250,
+      "errorMessage": {
+        "maxLength": "Name exceeds maximum length",
+        "minLength": "Name is required"
+      }
+    },
+    "description": {
+      "type": ["string", "null"],
+      "label": "Description",
+      "maxLength": 1000,
+      "errorMessage": {
+        "maxLength": "Description exceeds maximum length"
+      }
+    },
+    "problem": {
+      "type": ["string", "null"],
+      "label": "Problem to Solve"
+    },
+    "status": {
+      "$ref": "/definitions.json#/enumType",
+      "label": "Status",
+      "endpoint": "/enums/ideaStatus"
+    },
+    "source": {
+      "$ref": "/definitions.json#/enumType",
+      "label": "Source",
+      "endpoint": "/enums/ideaSourceType"
+    },
+    "modifiedDate": {
+      "type": "number",
+      "format": "date",
+      "label": "Modified"
+    },
+    "products": {
+      "type": "array",
+      "endpoint": "/products",
+      "items": {
+        "$ref": "/definitions.json#/domainType"
+      },
+      "label": "Product"
+    },
+    "features": {
+      "type": "array",
+      "endpoint": "/features",
+      "items": {
+        "$ref": "/definitions.json#/domainType"
+      },
+      "label": "Features"
+    },
+    "surveys": {
+      "type": "array",
+      "endpoint": "/surveys",
+      "items": {
+        "$ref": "/definitions.json#/domainType"
+      },
+      "label": "Surveys"
+    },
+    "relatedIdeas": {
+      "type": "array",
+      "endpoint": "/ideas",
+      "items": {
+        "$ref": "/definitions.json#/relationType"
+      },
+      "label": ""
+    },
+    "attachments": {
+      "type": "array",
+      "items": {
+        "$ref": "/definitions.json#/attachmentType"
+      },
+      "label": "Attachments"
+    },
+    "comments": {
+      "type": "array",
+      "items": {
+        "$ref": "/definitions.json#/commentType"
+      },
+      "label": "Comments"
+    },
+    "value": {
+      "type": ["integer", "null"],
+      "label": "Value"
+    },
+    "score": {
+      "type": ["integer", "null"],
+      "label": "Score"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "$ref": "/definitions.json#/tagType"
+      },
+      "label": "Tags"
+    },
+    "links": {
+      "type": "array",
+      "items": {
+        "$ref": "/definitions.json#/linkType"
+      },
+      "label": "Links"
+    }
+  },
+  "required": ["name"],
+  "errorMessage": {
+    "properties": {
+      "name": "Name is required"
+    }
+  }
+}

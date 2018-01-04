@@ -1,0 +1,91 @@
+{
+	"id": "/schema/feature",
+	"title": "feature",
+	"type": "object",
+	"label": {
+		"singular": "feature",
+		"plural": "features"
+	},
+	"properties": {
+		"id": {
+			"type": "string",
+			"label": "ID"
+		},
+		"businessId": {
+			"type": "string",
+			"label": "ID"
+		},
+		"name": {
+			"type": "string",
+			"label": "Name",
+			"minLength": 1,
+			"maxLength": 250,
+			"errorMessage": { "maxLength": "Name exceeds maximum length" }
+		},
+		"description": {
+			"type": "string",
+			"label": "Description",
+			"minLength": 1,
+			"maxLength": 1000,
+			"errorMessage": { "maxLength": "Description exceeds maximum length" }
+		},
+		"modifiedDate": {
+			"type": "number",
+			"format": "date",
+			"label": "Last Modified"
+		},
+		"startDate": {
+			"type": "number",
+			"format": "dateTime",
+			"label": "Start Date"
+		},
+		"pmTargetDate": {
+			"type": "number",
+			"format": "dateTime",
+			"label": "PM Target Date"
+		},
+		"engExpectedDate": {
+			"type": "number",
+			"format": "dateTime",
+			"label": "Engineer Expected Date"
+		},
+		"actualShipDate": {
+			"type": "number",
+			"format": "dateTime",
+			"label": "Actual Ship Date"
+		},
+		"value": {
+			"type": "integer",
+			"label": "Value"
+		},
+		"score": {
+			"type": "integer",
+			"label": "Score"
+		},
+		"estimation": {
+			"type": "integer",
+			"label": "Effort"
+		},
+		"tags": {
+			"type": "array",
+			"items": {
+				"$ref": "/definitions.json#/tagType"
+			},
+			"label": "Tags"
+		},
+		"links": {
+			"type": "array",
+			"items": {
+				"$ref": "/definitions.json#/linkType"
+			},
+			"label": "Links"
+		}
+	},
+	"required": ["name", "product"],
+	"errorMessage": {
+		"properties": {
+			"name": "Name is required",
+			"product": "Product is required"
+		}
+	}
+}

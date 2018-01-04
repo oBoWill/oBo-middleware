@@ -1,0 +1,27 @@
+{
+  "constants": {
+    "actions": {
+      "Delete": {
+        "name": "Delete",
+        "header": "Are you sure you want to delete",
+        "subHeader": "You can not undo this action."
+      }
+    },
+    "titles": {
+      "page": "User management",
+      "button_new": "user"
+    }
+  },
+  "bindings": {
+    "columns": [
+      { "field": "fname", "displayOnly": true, "maxWidth": 170, "minWidth": 100 },
+      { "field": "lname", "displayOnly": true, "maxWidth": 170, "minWidth": 100 },
+      { "field": "email", "displayOnly": true, "minWidth": 200 },
+      { "field": "roles", "displayOnly": true, "maxWidth": 150, "minWidth": 130 },
+      { "field": "sstatus", "displayOnly": true, "maxWidth": 100, "minWidth": 70 }
+    ],
+    "newRecordFields": ["fname", "lname", "email", "role"]
+  },
+  "defaultSorting": [{"id": "lname", "desc": false}],
+  "actions": { "add": { "disabled": { "dataLocation": "active", "validations": ["fname", "lname", "email", "roles"] } } }
+}

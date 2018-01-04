@@ -1,0 +1,88 @@
+{
+  "constants": {
+    "actions": {
+      "Delete": {
+        "name": "Delete",
+        "header": "Are you sure you want to delete",
+        "subHeader": "You can not undo this action."
+      }
+    }
+  },
+  "bindings": {},
+  "sections": [
+    {
+      "columnSize": {
+        "s": {
+          "size": 24
+        }
+      },
+      "bindings": [
+        {
+          "field": "description",
+          "disposition": {
+            "field": "TEXT_A"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Additional Info",
+      "columnSize": {
+        "s": {
+          "size": 24
+        },
+        "m": {
+          "size": 12
+        }
+      },
+      "bindings": [
+        "status",
+        "productLine"
+      ]
+    },
+    {
+      "title": "Related Records",
+      "columnSize": {
+        "s": {
+          "size": 24
+        },
+        "m": {
+          "size": 12
+        }
+      },
+      "bindings": [
+        "interviews",
+        "surveys"
+      ]
+    }
+  ],
+  "meta": {
+    "bindings": [
+      {
+        "field": "featureCount",
+        "disposition": "relatedObjectCount",
+        "container": {
+          "align": "right",
+          "margin": { "bottom": "large" }
+        }
+      },
+      {
+        "field": "ideaCount",
+        "disposition": "relatedObjectCount",
+        "container": {
+          "align": "right",
+          "margin": { "bottom": "large" }
+        }
+      },
+      {
+        "field": "tags",
+        "dividerBefore": true
+      },
+      {
+        "field": "links",
+        "dividerBefore": true
+      }
+    ]
+  },
+  "state": {}
+}

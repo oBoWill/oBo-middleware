@@ -1,0 +1,106 @@
+{
+  "id": "/schema/survey/response",
+  "title": "survey/response",
+  "type": "object",
+  "label": {
+    "singular": "Survey response",
+    "plural": "Survey responses"
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "label": "ID"
+    },
+    "status": {
+      "type": "object",
+      "label": "Status",
+      "$ref": "/definitions.json#/enumType",
+      "endpoint": "/enums/personStatus"
+    },
+    "quarantineReason": {
+      "type": "object",
+      "label": "Quarantine Reason",
+      "$ref": "/definitions.json#/enumType",
+      "endpoint": "/enums/quarantineReason"
+    },
+    "startDate": {
+      "type": "number",
+      "format": "dateTime",
+      "label": "Started"
+    },
+    "endDate": {
+      "type": "number",
+      "format": "dateTime",
+      "label": "Submitted"
+    },
+    "ipAddress": {
+      "type": "string",
+      "label": "IP Address"
+    },
+    "location": {
+      "type": "string",
+      "label": "Country"
+    },
+    "transactionId": {
+      "type": "string",
+      "label": "Transaction ID"
+    },
+    "avgTimePerQuestionInSeconds": {
+      "label": "Avg question response time",
+      "type": "number",
+      "format": "timeTo"
+    },
+    "totalTime": {
+      "label": "Total time to finish",
+      "type": "number",
+      "format": "timeTo"
+    },
+    "numberAnswers": {
+      "label": "Number of answers",
+      "type": "number"
+    },
+    "revenueBracket": {
+      "label" : "Company Revenue",
+      "$ref" : "/definitions.json#/enumType",
+      "endpoint": "/enums/revenueBracket"
+    },
+    "companySizeBracket": {
+      "label" : "Company Size",
+      "$ref" : "/definitions.json#/enumType",
+      "endpoint": "/enums/companySizeBracket"
+    },
+    "companyRevenue": {
+      "label" : "Company Revenue",
+      "type" : "number"
+    },
+    "industry": {
+      "label" : "Industry",
+      "$ref" : "/definitions.json#/enumType",
+      "endpoint": "/enums/industry"
+    },
+    "seniorityLevel": {
+      "label" : "Seniority",
+      "$ref" : "/definitions.json#/enumType",
+      "endpoint": "/enums/seniorityLevel"
+    },
+    "jobFunction": {
+      "label" : "Job Function",
+      "$ref" : "/definitions.json#/enumType",
+      "endpoint": "/enums/jobFunction"
+    },
+    "gender": {
+      "label" : "Gender",
+      "$ref" : "/definitions.json#/enumType",
+      "endpoint": "/enums/gender"
+    },
+    "age": {
+      "type": "number",
+      "label": "Age"
+    },
+    "educationLevel": {
+      "label" : "Education Level",
+      "$ref" : "/definitions.json#/enumType",
+      "endpoint": "/enums/educationLevel"
+    }
+  }
+}

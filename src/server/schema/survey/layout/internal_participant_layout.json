@@ -1,0 +1,7 @@
+{
+    "constants": {},
+    "bindings": {
+        "contactMapping": ["firstName", "lastName", "age", "workEmail", "personEmail", "workPhone", "personPhone", "genderString", "location", "companySize", "companyRevenue"],
+        "contactList": ["name", "firstName", "lastName", "age", "genderString"]
+    }
+}

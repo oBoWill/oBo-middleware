@@ -1,0 +1,23 @@
+{
+  "$id": "/schema/survey/design",
+  "title": "survey/design",
+  "type": "object",
+  "label": {
+    "singular": "Design",
+    "plural": "Designs"
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "maxLength": 20
+    },
+    "rules": { "type": "object" },
+    "tree": { "type" : "object" },
+    "errors": { "type": "object" },
+    "sections": {
+      "type": "array",
+      "minItems": 2,
+      "items": { "$ref": "/schema/survey/section" }
+    }
+  }
+}

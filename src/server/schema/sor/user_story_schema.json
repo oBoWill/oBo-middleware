@@ -1,0 +1,105 @@
+{
+	"id": "/schema/feature/userStory",
+	"title": "userStory",
+	"type": "object",
+	"label": {
+		"singular": "userStory",
+		"plural": "userStories"
+	},
+	"properties": {
+		"id": {
+			"type": "string",
+			"label": "ID"
+		},
+		"businessId": {
+			"type": "string",
+			"label": "ID"
+		},
+		"name": {
+			"type": "string",
+			"label": "Name",
+			"minLength": 1,
+			"maxLength": 250,
+			"errorMessage": {
+				"maxLength": "Name exceeds maximum length",
+				"minLength": "Name is required"
+			}
+		},
+		"description": {
+			"type": ["string", "null"],
+			"label": "Description",
+			"maxLength": 1000,
+			"errorMessage": {
+				"maxLength": "Description exceeds maximum length"
+			}
+		},
+		"owner": {
+			"type": "object",
+			"$ref": "/definitions.json#/userType",
+			"label": "Owner",
+			"endpoint": "/users"
+		},
+		"externalIssueTrackingId": {
+			"type": ["string", "null"],
+			"label": "JIRA Ticket"
+		},
+		"relatedUserStories": {
+			"type": "array",
+			"endpoint": "/userStories",
+			"items": {
+				"$ref": "/definitions.json#/relationType"
+			},
+			"label": "Related User Stories"
+		},
+		"status": {
+			"type": "object",
+			"$ref": "/definitions.json#/enumType",
+			"label": "Status",
+			"endpoint": "/enums/featureStatus"
+		},
+		"priority": {
+			"type": "object",
+			"$ref": "/definitions.json#/enumType",
+			"label": "Priority",
+			"endpoint": "/enums/priority"
+		},
+		"attachments": {
+			"type": "array",
+			"items": {
+				"$ref": "/definitions.json#/attachmentType"
+			},
+			"label": "Attachments"
+		},
+		"comments": {
+			"type": "array",
+			"items": {
+				"$ref": "/definitions.json#/commentType"
+			},
+			"label": "Comments"
+		},
+		"storyPoint": {
+			"type": "integer",
+			"label": "Story points"
+		},
+		"tags": {
+			"type": "array",
+			"items": {
+				"$ref": "/definitions.json#/tagType"
+			},
+			"label": "Tags"
+		},
+		"links": {
+			"type": "array",
+			"items": {
+				"$ref": "/definitions.json#/linkType"
+			},
+			"label": "Links"
+		}
+	},
+	"required": ["name"],
+	"errorMessage": {
+		"properties": {
+			"name": "Name is required"
+		}
+	}
+}

@@ -1,0 +1,53 @@
+{
+  "id": "/schema/dataImportLog",
+  "title": "Data Import",
+  "type": "object",
+  "label": {
+    "singular": "Data Import",
+    "plural": "Data Import"},
+  "properties": {
+    "id": {
+      "type": "string",
+      "label": "ID"
+    },
+    "objectName": {
+      "type": "string",
+      "label": "Object"
+    },
+    "recordImported": {
+      "type": "integer",
+      "label": "# Created"
+    },
+    "recordRejected": {
+      "type": "integer",
+      "label": "# Rejected"
+    },
+    "createdBy": {
+      "type": "object",
+      "label": "Imported By",
+      "$ref": "/definitions.json#/userType"
+    },
+    "errorFile": {
+      "type": "object",
+      "label": "Error file",
+      "$ref": "/definitions.json#/attachmentType"
+    },
+    "status" : {
+      "type": "object",
+      "label": "Status",
+      "$ref": "/definitions.json#/enumType"
+    },
+    "objectAllowCustom": {
+      "type": "object",
+      "label": "",
+      "$ref": "/definitions.json#/enumType",
+      "endpoint": "/enums/objectAllowCustom?use=import"
+    },
+    "startDate": {
+      "type": "number",
+      "format": "date",
+      "label": "Started"
+    }
+  },
+  "required": ["objectAllowCustom"]
+}
